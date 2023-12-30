@@ -11,10 +11,10 @@ publish: setup requirements.txt
 	rm -rf dist
 	python setup.py sdist bdist_wheel
 	twine --version || pip install twine
-	twine upload dist/*
+	twine upload -u "$${PYPI_USERNAME}" -p "$${PYPI_PASSWORD}" dist/*
 
 clean:
-	rm -rf dist molecule-schema.egg-info
+	rm -rf dist molecule_schema.egg-info
 
 setup:
 	pip install pip-tools wheel twine
