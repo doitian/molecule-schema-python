@@ -1,6 +1,5 @@
-class Bytes:
-    pass
+from .schema import Option, Bytes
 
 
-class BytesOpt:
-    pass
+class BytesOpt(Option):
+    value: Bytes
